@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roots to Eat — Naturally Good. Truly Indian.</title>
+<meta name="description" content="Roots to Eat — rooted in Indian grains, farms and everyday food. Launching soon.">
+<style>
+:root{
+ --g:#173c1f;--g2:#315d2b;--olive:#718544;--gold:#c79a39;
+ --cream:#f8f2df;--sand:#ead9b7;--brown:#654728;--ink:#243126;--white:#fffdf8;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+.nav{height:82px;padding:0 5.5%;display:flex;align-items:center;justify-content:space-between;
+background:#fffdf8;border-bottom:1px solid #e8dfca;position:sticky;top:0;z-index:20}
+.logo{height:62px;width:auto;display:block}
+.navlinks{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:700;color:#293728}
+.navlinks a:hover{color:var(--gold)}
+.contact-mini{display:flex;gap:18px;align-items:center;font-size:12px;color:#42503e}
+.menu{display:none;border:0;background:none;font-size:25px;color:var(--g)}
+.hero{min-height:650px;position:relative;overflow:hidden;background:
+linear-gradient(180deg,rgba(247,239,215,.18),rgba(246,238,212,.95)),
+radial-gradient(circle at 76% 27%,#ffd97b 0 6%,transparent 6.5%),
+linear-gradient(180deg,#cfe2e0 0 30%,#d8c79c 30% 43%,#789a55 43% 100%)}
+.hero:before{content:"";position:absolute;inset:auto 0 0;height:45%;
+background:repeating-linear-gradient(168deg,transparent 0 27px,rgba(255,255,255,.18) 28px 30px),
+linear-gradient(0deg,#4f762f,#79974b 55%,transparent);clip-path:polygon(0 35%,100% 0,100% 100%,0 100%)}
+.sun{position:absolute;width:125px;height:125px;border-radius:50%;background:#f7bf45;
+right:16%;top:18%;box-shadow:0 0 0 20px rgba(247,191,69,.08)}
+.hills{position:absolute;left:0;right:0;bottom:35%;height:170px;background:
+linear-gradient(155deg,transparent 48%,#8d855f 49% 55%,transparent 56%),
+linear-gradient(25deg,transparent 52%,#9e966e 53% 60%,transparent 61%);opacity:.65}
+.hero-inner{position:relative;z-index:2;max-width:1180px;margin:auto;padding:70px 5.5% 100px;text-align:center}
+.kicker{letter-spacing:4px;font-size:12px;font-weight:800;color:var(--gold);text-transform:uppercase}
+.hero h1{font:700 clamp(45px,7vw,82px)/.95 Georgia,serif;color:var(--g);margin:16px 0 12px}
+.hero h1 em{font-style:normal;color:#6c552e}
+.hero p{max-width:650px;margin:0 auto;color:#374737;font-size:17px;line-height:1.7}
+.launch{display:inline-block;margin:26px 0 12px;background:var(--g);color:#fff;padding:15px 34px;border-radius:4px;
+font-weight:800;letter-spacing:1px;box-shadow:0 8px 25px #173c1f25}
+.launch:hover{background:#28572e}
+.sub{font-size:12px;color:#5d624f}
+.features{background:var(--cream);display:grid;grid-template-columns:repeat(5,1fr);padding:28px 5.5%;border-top:1px solid #dfd3b7;border-bottom:1px solid #dfd3b7}
+.feature{text-align:center;padding:8px 20px;border-right:1px solid #d9ccb0}.feature:last-child{border:0}
+.icon{font-size:26px;margin-bottom:8px}.feature b{display:block;font:700 15px Georgia,serif;color:var(--g)}
+.feature span{font-size:11px;color:#6e695d}
+.section{padding:90px 5.5%}.head{text-align:center;max-width:720px;margin:0 auto 46px}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+h2{font:700 clamp(34px,4.5vw,53px)/1.05 Georgia,serif;color:var(--g);margin:12px 0}
+.head p{line-height:1.7;color:#6a6a5d}
+.products{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{background:#fff;border:1px solid #e4dbc8;padding:14px;box-shadow:0 8px 25px #173c1f08}
+.pack{height:280px;position:relative;overflow:hidden;border-radius:2px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:24px}
+.pack:after{content:"";position:absolute;inset:0;background:linear-gradient(130deg,rgba(255,255,255,.3),transparent 45%,rgba(0,0,0,.05))}
+.bajra{background:linear-gradient(145deg,#46652c,#8b9b51)}
+.jowar{background:linear-gradient(145deg,#a56c1d,#d4a44a)}
+.multi{background:linear-gradient(145deg,#542b2a,#8e4d42)}
+.spice{background:linear-gradient(145deg,#8b2020,#bd4b30)}
+.pouch{width:155px;height:235px;border-radius:3px 3px 12px 12px;background:#f5e6c5;box-shadow:0 12px 25px #0003;position:relative;z-index:2;
+padding:32px 13px 12px;text-align:center;color:var(--g)}
+.pouch:before{content:"ROOTS TO EAT";position:absolute;top:12px;left:10px;right:10px;font:bold 10px Georgia,serif;border-bottom:1px solid #cbbf9e;padding-bottom:8px}
+.pouch h3{font:700 20px Georgia,serif;margin:38px 0 4px}.pouch small{font-size:9px;letter-spacing:1px}
+.pouch .grain{font-size:45px;margin-top:30px}.product h3{font:700 24px Georgia,serif;color:var(--g);margin:18px 4px 5px}
+.product p{margin:0 4px 12px;color:#716c60;font-size:13px;line-height:1.5}
+.story{background:var(--g);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story h2{color:#fff}.story p{color:#dfe7d9;line-height:1.8}.story-art{min-height:390px;border:1px solid #7f9477;position:relative;overflow:hidden;
+background:linear-gradient(180deg,#e6d4aa 0 42%,#78904d 43% 65%,#496d32 66% 100%)}
+.story-art:before{content:"🌾";font-size:160px;position:absolute;left:15%;bottom:5px;transform:rotate(-10deg)}
+.story-art:after{content:"FROM RAJASTHAN'S FIELDS";position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;font:italic 20px Georgia,serif}
+.promise{background:#f4ecd9}.promise-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.promise-card{background:#fff;padding:28px;border-top:3px solid var(--gold)}.promise-card b{font:700 22px Georgia,serif;color:var(--g)}
+.promise-card p{font-size:13px;color:#706b60;line-height:1.6}
+.cta{background:linear-gradient(110deg,#173c1f,#2c5729);color:#fff;text-align:center;padding:80px 5.5%}
+.cta h2{color:#fff}.cta p{max-width:620px;margin:0 auto 26px;color:#dce6d6;line-height:1.7}
+.contactline{font-weight:700;margin-top:22px;color:#f1e6c7}
+footer{background:#0e2b16;color:#d7e0d2;padding:45px 5.5%;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}
+footer h3{font:700 25px Georgia,serif;color:#fff;margin:0 0 12px} footer p,footer a{font-size:12px;line-height:1.9;color:#bfcbb9}
+.copy{border-top:1px solid #355039;margin-top:22px;padding-top:18px;font-size:11px;color:#98a994}
+@media(max-width:900px){
+ .navlinks,.contact-mini{display:none}.menu{display:block}.features{grid-template-columns:repeat(2,1fr)}
+ .feature:nth-child(2n){border-right:0}.products{grid-template-columns:repeat(2,1fr)}
+ .story{grid-template-columns:1fr}.promise-grid{grid-template-columns:repeat(2,1fr)}
+ footer{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+ .logo{height:52px}.hero-inner{padding-top:55px}.features,.products,.promise-grid,footer{grid-template-columns:1fr}
+ .feature{border-right:0;border-bottom:1px solid #d9ccb0}.feature:last-child{border-bottom:0}
+ .section{padding:65px 5.5%}.hero{min-height:650px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#home"><img class="logo" src="roots-to-eat-logo.png" alt="Roots to Eat"></a>
+  <nav class="navlinks">
+    <a href="#home">Home</a><a href="#story">About Us</a><a href="#products">Products</a>
+    <a href="#promise">Our Promise</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="contact-mini">✉ dehrakrishna@gmail.com &nbsp; ☎ 6378480553</div>
+  <button class="menu" aria-label="Menu">☰</button>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="sun"></div><div class="hills"></div>
+  <div class="hero-inner">
+    <div class="kicker">Welcome to Roots to Eat</div>
+    <h1>Naturally Good.<br><em>Truly Indian.</em></h1>
+    <p>Wholesome grains, traditional goodness and better everyday nutrition — thoughtfully brought from Indian farms to your home.</p>
+    <a class="launch" href="#contact">LAUNCHING SOON</a>
+    <div class="sub">Rooted in Rajasthan • Growing for India</div>
+  </div>
+</section>
+
+<section class="features">
+ <div class="feature"><div class="icon">🌿</div><b>100% Natural</b><span>Simple ingredients</span></div>
+ <div class="feature"><div class="icon">🌾</div><b>No Added Preservatives</b><span>Pure by nature</span></div>
+ <div class="feature"><div class="icon">♥</div><b>Rich in Nutrition</b><span>Made for everyday meals</span></div>
+ <div class="feature"><div class="icon">👩‍🌾</div><b>Supporting Farmers</b><span>Closer to the source</span></div>
+ <div class="feature"><div class="icon">🌱</div><b>Indian Grains</b><span>Ancient grains, modern kitchen</span></div>
+</section>
+
+<section class="section" id="products">
+ <div class="head"><div class="eyebrow">Our Products</div><h2>Goodness in Every Bite</h2>
+ <p>Our first collection celebrates the grains that have always belonged on Indian tables — with a focus on quality, freshness and honest food.</p></div>
+ <div class="products">
+  <article class="product"><div class="pack bajra"><div class="pouch"><h3>BAJRA<br>ATTA</h3><small>PEARL MILLET FLOUR</small><div class="grain">🌾</div></div></div><h3>Bajra Atta</h3><p>Earthy, traditional and made for everyday Indian meals.</p></article>
+  <article class="product"><div class="pack jowar"><div class="pouch"><h3>JOWAR<br>ATTA</h3><small>SORGHUM FLOUR</small><div class="grain">🌾</div></div></div><h3>Jowar Atta</h3><p>A wholesome grain for the modern Indian pantry.</p></article>
+  <article class="product"><div class="pack multi"><div class="pouch"><h3>MULTIGRAIN<br>ATTA</h3><small>WHOLESOME GRAIN BLEND</small><div class="grain">🌱</div></div></div><h3>Multigrain Atta</h3><p>A balanced blend created for everyday family cooking.</p></article>
+  <article class="product"><div class="pack spice"><div class="pouch"><h3>PREMIUM<br>SPICES</h3><small>PURE • AROMATIC • AUTHENTIC</small><div class="grain">🌶️</div></div></div><h3>Premium Spices</h3><p>A future range inspired by India's regional flavours.</p></article>
+ </div>
+</section>
+
+<section class="section story" id="story">
+ <div><div class="eyebrow">Our Story</div><h2>From Rajasthan's fields to your table.</h2>
+ <p>Roots to Eat is being built from a simple belief: the future of Indian food can be modern without forgetting where it comes from.</p>
+ <p>We are starting in Rajasthan, with a deep connection to Indian grains and a pan-India ambition. Our goal is to make familiar, nourishing staples feel trustworthy, contemporary and accessible.</p></div>
+ <div class="story-art" aria-label="Rajasthan farm illustration"></div>
+</section>
+
+<section class="section promise" id="promise">
+ <div class="head"><div class="eyebrow">Our Promise</div><h2>Rooted in what matters.</h2></div>
+ <div class="promise-grid">
+  <div class="promise-card"><b>Pure & Thoughtful</b><p>We aim for straightforward products with ingredients people can understand.</p></div>
+  <div class="promise-card"><b>Indian Grains</b><p>Celebrating millets and traditional grains that belong to India's food culture.</p></div>
+  <div class="promise-card"><b>Farmer Connection</b><p>Building a transparent journey from grain and farm toward the final pack.</p></div>
+  <div class="promise-card"><b>For Tomorrow</b><p>Creating a food brand that can grow responsibly from Rajasthan to India.</p></div>
+ </div>
+</section>
+
+<section class="cta" id="contact">
+ <div class="eyebrow">Coming Soon</div><h2>Something good is growing.</h2>
+ <p>Roots to Eat is preparing for launch. For distribution, retail, collaboration or launch enquiries, get in touch.</p>
+ <a class="launch" href="mailto:dehrakrishna@gmail.com?subject=Roots%20to%20Eat%20Enquiry">CONTACT US</a>
+ <div class="contactline">✉ dehrakrishna@gmail.com &nbsp; • &nbsp; ☎ 6378480553</div>
+</section>
+</main>
+
+<footer>
+ <div><h3>Roots to Eat™</h3><p>Naturally Good. Truly Indian.</p><p>Rooted in Rajasthan. Built for India.</p></div>
+ <div><h3>Explore</h3><p><a href="#home">Home</a><br><a href="#story">Our Story</a><br><a href="#products">Products</a><br><a href="#promise">Our Promise</a></p></div>
+ <div><h3>Connect</h3><p>dehrakrishna@gmail.com<br>6378480553</p></div>
+ <div class="copy">© 2026 Roots to Eat. All rights reserved.</div>
+</footer>
+</body>
+</html>
