@@ -1,274 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Roots to Eat — Naturally Good. Truly Indian. Traditional grains and premium Indian foods rooted in Rajasthan.">
-  <title>Roots to Eat | Naturally Good. Truly Indian.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --green:#173d28; --green2:#24563a; --cream:#f7f1e5; --paper:#fffdf8;
-      --gold:#c69b52; --brown:#79573c; --ink:#172019; --muted:#657066;
-      --line:rgba(23,61,40,.14); --shadow:0 20px 60px rgba(20,44,29,.12);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1180px,92%);margin:auto}
-    .topbar{background:var(--green);color:#f7f1e5;text-align:center;padding:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-    header{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:32px;color:var(--green);letter-spacing:-.04em;display:flex;align-items:center;gap:8px}
-    .brand .leaf{font-size:25px;transform:rotate(-18deg)}
-    nav{display:flex;gap:28px;font-size:14px;font-weight:600;color:#33443a}
-    nav a:hover{color:var(--green)}
-    .nav-cta{background:var(--green);color:white;padding:11px 18px;border-radius:999px;font-size:13px;font-weight:700}
-    .hero{background:linear-gradient(135deg,#f7f1e5 0%,#fffdf8 55%,#edf3ea 100%);padding:46px 0 64px;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:36px}
-    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
-    h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--green);line-height:.95}
-    h1{font-size:clamp(58px,7vw,92px);letter-spacing:-.055em}
-    .hero-copy p{font-size:18px;color:#536057;max-width:520px;margin:22px 0 28px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-size:14px;font-weight:700;border:1px solid var(--green);transition:.2s}
-    .btn.primary{background:var(--green);color:#fff}
-    .btn.secondary{color:var(--green);background:transparent}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(23,61,40,.12)}
-    .hero-visual{position:relative}
-    .hero-visual:before{content:"";position:absolute;inset:5% 3% 4%;background:radial-gradient(circle,rgba(198,155,82,.22),transparent 62%);filter:blur(10px)}
-    .hero-visual img{position:relative;width:100%;border-radius:28px;box-shadow:var(--shadow);border:8px solid rgba(255,255,255,.75)}
-    .floating{position:absolute;background:#fffdf8;border:1px solid var(--line);box-shadow:0 15px 35px rgba(20,44,29,.14);border-radius:18px;padding:13px 16px;display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;color:var(--green)}
-    .f1{left:-14px;bottom:24px}.f2{right:-12px;top:24px}
-    .trust{background:var(--green);color:#fff;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-    .trust div{padding:22px;text-align:center;border-right:1px solid rgba(255,255,255,.18)}
-    .trust div:last-child{border:0}
-    .trust b{display:block;font-family:"Cormorant Garamond",serif;font-size:23px}.trust span{font-size:11px;opacity:.75}
-    section{padding:92px 0}
-    .section-head{text-align:center;max-width:720px;margin:0 auto 48px}
-    .section-head h2{font-size:clamp(42px,5vw,62px);margin:8px 0 14px}
-    .section-head p{color:var(--muted)}
-    .story{background:var(--cream)}
-    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-    .story-art{min-height:470px;border-radius:30px;position:relative;overflow:hidden;background:
-      linear-gradient(rgba(23,61,40,.08),rgba(23,61,40,.18)),
-      url('roots-to-eat-hero.png') center/cover}
-    .story-card{position:absolute;left:24px;bottom:24px;background:#fffdf8;padding:22px;border-radius:20px;max-width:300px;box-shadow:var(--shadow)}
-    .story-card strong{font-family:"Cormorant Garamond",serif;color:var(--green);font-size:27px}
-    .story-copy h2{font-size:58px;margin-bottom:20px}
-    .story-copy p{color:var(--muted);margin-bottom:16px}
-    .signature{color:var(--green);font-family:"Cormorant Garamond",serif;font-size:25px;margin-top:22px}
-    .products{background:var(--paper)}
-    .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .product{background:#fff;border:1px solid var(--line);border-radius:24px;padding:14px;transition:.25s;position:relative;overflow:hidden}
-    .product:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
-    .product-img{height:290px;border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#f0e8d7,#faf7ef);display:flex;align-items:center;justify-content:center}
-    .product-img img{width:100%;height:100%;object-fit:cover;object-position:center}
-    .product h3{font-size:30px;margin:17px 6px 3px}
-    .product p{font-size:12px;color:var(--muted);margin:0 6px 15px}
-    .tag{display:inline-block;margin:0 6px 7px;padding:6px 9px;background:#edf3ea;color:var(--green);border-radius:999px;font-size:10px;font-weight:700}
-    .process{background:var(--green);color:#fff}
-    .process .section-head h2,.process .section-head{color:#fff}
-    .process .section-head h2{color:#fff}
-    .process .section-head p{color:rgba(255,255,255,.72)}
-    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-    .step{padding:25px 18px;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.05)}
-    .step-num{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);display:grid;place-items:center;margin-bottom:28px;font-family:"Cormorant Garamond",serif;font-size:22px}
-    .step h3{color:#fff;font-size:28px;margin-bottom:8px}.step p{font-size:12px;color:rgba(255,255,255,.68)}
-    .roots{background:#f0eee4}
-    .roots-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-    .map{min-height:430px;border-radius:30px;background:linear-gradient(135deg,#dce8dc,#f6f0df);display:grid;place-items:center;position:relative;overflow:hidden}
-    .map .india{font-family:"Cormorant Garamond",serif;font-size:140px;color:rgba(23,61,40,.15);font-weight:700}
-    .map .pin{position:absolute;left:45%;top:37%;background:var(--green);color:#fff;padding:11px 15px;border-radius:999px;font-size:11px;font-weight:800;box-shadow:0 10px 25px rgba(23,61,40,.2)}
-    .roots-copy h2{font-size:64px;margin-bottom:20px}
-    .roots-copy p{color:var(--muted);margin-bottom:20px}
-    .quote{border-left:3px solid var(--gold);padding-left:18px;color:var(--green);font-family:"Cormorant Garamond",serif;font-size:25px}
-    .partner{padding:0 0 92px}
-    .partner-box{border-radius:30px;background:linear-gradient(120deg,#e9efe6,#f8f1e2);padding:55px;display:flex;justify-content:space-between;align-items:center;gap:30px}
-    .partner-box h2{font-size:58px;max-width:650px}
-    .partner-box p{color:var(--muted);margin-top:12px}
-    footer{background:#102c1d;color:#fff;padding:48px 0 25px}
-    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px}
-    footer .brand{color:#fff}
-    footer p,footer a{font-size:13px;color:rgba(255,255,255,.68)}
-    footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:15px}
-    .copyright{border-top:1px solid rgba(255,255,255,.13);margin-top:35px;padding-top:18px;font-size:11px;color:rgba(255,255,255,.5);display:flex;justify-content:space-between;gap:20px}
-    .whatsapp{position:fixed;right:20px;bottom:20px;background:#1f8f4c;color:white;padding:13px 17px;border-radius:999px;font-weight:800;font-size:13px;box-shadow:0 12px 28px rgba(0,0,0,.2);z-index:30}
-    @media(max-width:900px){
-      nav{display:none}.hero-grid,.story-grid,.roots-grid{grid-template-columns:1fr}
-      .hero{padding-top:30px}.hero-copy{text-align:center}.hero-copy p{margin-left:auto;margin-right:auto}.actions{justify-content:center}
-      .product-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
-      .trust{grid-template-columns:repeat(2,1fr)}.trust div:nth-child(2){border-right:0}.trust div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.18)}
-      .partner-box{display:block;text-align:center}.partner-box h2{font-size:48px;margin:auto}.partner-box .actions{margin-top:25px}
-      .footer-grid{grid-template-columns:1fr 1fr}
-    }
-    @media(max-width:560px){
-      .nav{height:64px}.brand{font-size:27px}.nav-cta{padding:9px 13px}
-      h1{font-size:58px}.hero-visual img{border-width:4px}.floating{display:none}
-      section{padding:68px 0}.product-grid{grid-template-columns:1fr}.product-img{height:330px}
-      .steps{grid-template-columns:1fr}.story-art{min-height:380px}.roots-copy h2,.story-copy h2{font-size:48px}
-      .trust b{font-size:20px}.trust div{padding:17px 10px}.footer-grid{grid-template-columns:1fr}.copyright{display:block}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MARUGRAINS — Pure grains and authentic spices from Rajasthan's Marudhar.">
+<title>MARUGRAINS | Pure Grains • Real Nutrition • Rajasthan's Pride</title>
+<style>
+:root{--green:#083b2d;--deep:#06281f;--gold:#c99b42;--cream:#f7efdc;--sand:#e8d6b2;--ink:#18231f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:Georgia,serif;margin:0 0 14px}p{line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px 5%;background:rgba(6,40,31,.78);backdrop-filter:blur(14px);color:#fff}
+.logo{font-family:Georgia,serif;font-size:25px;letter-spacing:2px;color:#f5d98c;font-weight:700}.logo small{display:block;font:10px Inter,sans-serif;letter-spacing:2px;color:#fff}
+nav a{color:#fff;text-decoration:none;margin-left:22px;font-size:14px}.menu{display:none}
+.hero{min-height:92vh;display:grid;place-items:center;padding:110px 6% 60px;position:relative;overflow:hidden;background:linear-gradient(115deg,#082e24,#8b6a3e)}
+.hero:before{content:"";position:absolute;inset:0;background:url("assets/marugrains-hero.png") center/cover no-repeat;opacity:.9;mix-blend-mode:screen}
+.hero-content{position:relative;z-index:2;max-width:760px;color:#fff;margin-right:auto}.eyebrow{letter-spacing:3px;text-transform:uppercase;color:#f1d28a;font-size:13px}
+.hero h1{font-size:clamp(52px,8vw,96px);line-height:.95;text-shadow:0 5px 25px #0008}.hero p{font-size:18px;max-width:620px}.btn{display:inline-block;padding:14px 24px;border-radius:30px;text-decoration:none;font-weight:700;margin:8px 8px 0 0}.primary{background:#e0b65d;color:#17372c}.ghost{border:1px solid #fff;color:#fff}
+section{padding:80px 6%}.section-head{max-width:720px;margin-bottom:35px}.section-head span{color:#9a6f2b;letter-spacing:2px;text-transform:uppercase;font-size:12px;font-weight:800}
+.products{background:#fbf4e5}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.card{background:#fffaf0;border:1px solid #e4d6b9;border-radius:22px;padding:18px;box-shadow:0 12px 30px #4d35150f;transition:.35s;transform-style:preserve-3d}.card:hover{transform:translateY(-8px) rotateX(2deg) rotateY(-2deg);box-shadow:0 22px 45px #4d35151c}.pack{height:210px;border-radius:16px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#60713d,#e7d5a5)}.pack:after{content:"MARUGRAINS";font:700 17px Georgia;color:#fff;letter-spacing:1px;padding:45px 18px;border:2px solid #fff8;border-radius:8px;box-shadow:0 8px 20px #0004}.pack b{position:absolute;bottom:18px;color:#fff;font-size:15px;z-index:2}.jowar .pack{background:linear-gradient(145deg,#546d3e,#c69a4a)}.multi .pack{background:linear-gradient(145deg,#5e314f,#d3a55b)}.wheat .pack{background:linear-gradient(145deg,#80613c,#e2bf70)}.bajra .pack{background:linear-gradient(145deg,#1d5b61,#c99b42)}.makka .pack{background:linear-gradient(145deg,#a36a14,#f0cf57)}
+.card h3{font-size:20px;margin-top:18px}.card p{font-size:13px;color:#5b625d}
+.spices{background:#20170f;color:#fff;position:relative;overflow:hidden}.spices:before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;right:-180px;top:-180px;background:radial-gradient(circle,#d39b3c55,transparent 65%)}.spice-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}.spice-bowl{min-height:360px;border-radius:30px;background:radial-gradient(circle at 35% 35%,#e9b83c 0 9%,transparent 10%),radial-gradient(circle at 65% 28%,#b21f19 0 10%,transparent 11%),radial-gradient(circle at 55% 68%,#4a2c15 0 14%,transparent 15%),radial-gradient(circle at 30% 70%,#8d5d25 0 12%,transparent 13%),linear-gradient(145deg,#56371e,#1a1009);box-shadow:inset 0 0 80px #0009,0 20px 50px #0008;transform:perspective(700px) rotateX(5deg);animation:float 5s ease-in-out infinite}.spices li{margin:13px 0}.story{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.story-img{min-height:430px;border-radius:28px;background:url("assets/marugrains-hero.png") 62% 78%/cover;box-shadow:0 20px 50px #0002}.founder{background:linear-gradient(135deg,#efe1c2,#fffaf0)}.quote{font:italic 25px Georgia;line-height:1.5;color:#305044}.contact{background:var(--green);color:#fff;text-align:center}.contact a{color:#f4d58a}.footer{background:#041b15;color:#c9d1cb;padding:25px 6%;display:flex;justify-content:space-between;gap:20px;font-size:13px}
+.reveal{opacity:0;transform:translateY(30px);transition:1s}.reveal.show{opacity:1;transform:none}
+.music{position:fixed;right:18px;bottom:18px;z-index:30;border:0;border-radius:50%;width:54px;height:54px;background:#d8ad56;color:#17372c;font-size:20px;box-shadow:0 8px 25px #0004;cursor:pointer}
+@keyframes float{50%{transform:perspective(700px) rotateX(2deg) translateY(-10px)}}@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.spice-grid,.story{grid-template-columns:1fr}.story-img{min-height:300px}}@media(max-width:650px){nav{padding:13px 5%}.menu{display:block;font-size:25px}.links{display:none}.links.open{display:block;position:absolute;top:65px;left:0;right:0;background:var(--deep);padding:20px}.links a{display:block;margin:14px}.hero{min-height:86vh}.hero h1{font-size:52px}.grid{grid-template-columns:1fr}.footer{flex-direction:column}}
+</style>
 </head>
 <body>
-  <div class="topbar">Rooted in Rajasthan · Made for India · Naturally Good</div>
+<nav>
+  <div class="logo">MARUGRAINS<small>PURE GRAINS • REAL NUTRITION</small></div>
+  <div class="links" id="links"><a href="#home">Home</a><a href="#products">Products</a><a href="#spices">Spices</a><a href="#story">Our Story</a><a href="#contact">Contact</a></div>
+  <div class="menu" onclick="document.getElementById('links').classList.toggle('open')">☰</div>
+</nav>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home"><span class="leaf">⌁</span>Roots to Eat</a>
-      <nav>
-        <a href="#story">Our Story</a>
-        <a href="#products">Products</a>
-        <a href="#journey">Our Roots</a>
-        <a href="#partner">Partner With Us</a>
-      </nav>
-      <a class="nav-cta" href="https://wa.me/916378480553?text=Hello%20Roots%20to%20Eat%2C%20I%20want%20to%20know%20more.">WhatsApp Us</a>
-    </div>
-  </header>
+<header class="hero" id="home">
+  <div class="hero-content reveal">
+    <div class="eyebrow">From the golden soil of Marudhar</div>
+    <h1>Pure Grains.<br>Healthy Tomorrow.</h1>
+    <p>Rajasthan ki mitti se, ghar tak — carefully selected grains and authentic spices with a simple promise: purity, nutrition and honest food.</p>
+    <a class="btn primary" href="#products">Explore Products →</a>
+    <a class="btn ghost" href="#story">Meet the Founder</a>
+  </div>
+</header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">🌾 From Rajasthan's roots</div>
-          <h1>Goodness<br>from our<br>Roots.</h1>
-          <p>Traditional Indian grains and flavours, thoughtfully brought to modern kitchens. <b>Naturally Good. Truly Indian.</b></p>
-          <div class="actions">
-            <a class="btn primary" href="#products">Explore Products</a>
-            <a class="btn secondary" href="#partner">Become a Partner</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img src="roots-to-eat-hero.png" alt="Roots to Eat millet flour and spice products">
-          <div class="floating f1">🌾 Traditional grains</div>
-          <div class="floating f2">🇮🇳 Made for India</div>
-        </div>
-      </div>
-    </section>
+<section class="products" id="products">
+  <div class="section-head reveal"><span>Our Grains</span><h2>Seedhi khet se, seedhi rasoi tak.</h2><p>Jowar, multigrain, wheat, bajra and makka — packed with a focus on freshness and transparent sourcing.</p></div>
+  <div class="grid">
+    <article class="card jowar reveal"><div class="pack" style="background:url('assets/jowar-atta.jpg') center/cover"><b>JOWAR ATTA</b></div><h3>Jowar Atta</h3><p>Light, versatile and naturally rich in grain goodness.</p></article>
+    <article class="card multi reveal"><div class="pack" style="background:url('assets/multigrain-atta.jpg') center/cover"><b>MULTIGRAIN ATTA</b></div><h3>Multigrain Atta</h3><p>A balanced blend for everyday wholesome meals.</p></article>
+    <article class="card wheat reveal"><div class="pack" style="background:url('assets/wheat-atta.jpg') center/cover"><b>WHEAT ATTA</b></div><h3>Wheat Atta</h3><p>Everyday traditional goodness with a fresh-milled feel.</p></article>
+    <article class="card bajra reveal"><div class="pack" style="background:url('assets/bajra-atta.jpg') center/cover"><b>BAJRA ATTA</b></div><h3>Bajra Atta</h3><p>Marudhar's beloved pearl millet for stronger, nourishing meals.</p></article>
+    <article class="card makka reveal"><div class="pack" style="background:url('assets/makka-atta.jpg') center/cover"><b>MAKKA ATTA</b></div><h3>Makka Atta</h3><p>Golden corn flour with authentic taste and texture.</p></article>
+  </div>
+</section>
 
-    <div class="trust">
-      <div><b>100% Natural*</b><span>Simple food philosophy</span></div>
-      <div><b>Traditional Grains</b><span>India's food heritage</span></div>
-      <div><b>Farmer Focus</b><span>Rooted in communities</span></div>
-      <div><b>Pan India Vision</b><span>From Rajasthan to every kitchen</span></div>
-    </div>
+<section class="spices" id="spices">
+  <div class="spice-grid">
+    <div <div class="spice-bowl reveal" style="background:url('assets/spices.jpg') center/cover"></div>
+    <div class="reveal"><span>Authentic Spices</span><h2>Pure flavour. Natural life.</h2><p>Our spice range is designed around clean ingredients, careful grinding and freshness — with Rajasthan at the heart of the story.</p><ul><li>100% ingredient-focused approach</li><li>No unnecessary fillers</li><li>Fresh aroma & careful packaging</li><li>Made for Indian kitchens and global buyers</li></ul><a class="btn primary" href="mailto:dehrakrishna@gmail.com?subject=MARUGRAINS%20Spices%20Enquiry">Enquire for Spices →</a></div>
+  </div>
+</section>
 
-    <section class="story" id="story">
-      <div class="container story-grid">
-        <div class="story-art">
-          <div class="story-card"><strong>Our roots are local.<br>Our vision is Pan India.</strong></div>
-        </div>
-        <div class="story-copy">
-          <div class="eyebrow">Our Story</div>
-          <h2>Born from the Roots of Rajasthan.</h2>
-          <p>India has always had grains that nourished generations. Roots to Eat brings that familiar goodness into today's kitchens with a modern, quality-focused approach.</p>
-          <p>We believe great food begins at the root — with the grain, the farmer, the land and the care behind every pack.</p>
-          <div class="signature">Goodness from Roots, for every home.</div>
-        </div>
-      </div>
-    </section>
+<section class="story" id="story">
+  <div <div class="story-img reveal" style="background:url('assets/founder.jpg') center/cover"></div>
+  <div class="reveal"><span>Our Journey</span><h2>Marudhar se India, aur India se duniya.</h2><p>MARUGRAINS is being built around a simple idea: Rajasthan's grains and food traditions deserve a modern, trustworthy brand.</p><p>From local sourcing and milling to professional packaging and future export markets, the goal is to take the taste and strength of Marudhar to homes across India and beyond.</p></div>
+</section>
 
-    <section class="products" id="products">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Our Products</div>
-          <h2>Our roots. Your food.</h2>
-          <p>A focused range built around Indian grains and flavours, designed for everyday kitchens.</p>
-        </div>
-        <div class="product-grid">
-          <article class="product">
-            <div class="product-img"><img src="roots-to-eat-hero.png" alt="Bajra Atta" style="object-position:10% center; transform:scale(1.45)"></div>
-            <h3>Bajra Atta</h3><p>Pearl Millet Flour</p>
-            <span class="tag">High Fibre</span><span class="tag">Gluten Free*</span>
-          </article>
-          <article class="product">
-            <div class="product-img"><img src="roots-to-eat-hero.png" alt="Jowar Atta" style="object-position:37% center; transform:scale(1.45)"></div>
-            <h3>Jowar Atta</h3><p>Sorghum Flour</p>
-            <span class="tag">High Fibre</span><span class="tag">Rich in Iron*</span>
-          </article>
-          <article class="product">
-            <div class="product-img"><img src="roots-to-eat-hero.png" alt="Multigrain Atta" style="object-position:61% center; transform:scale(1.45)"></div>
-            <h3>Multigrain Atta</h3><p>Wheat · Bajra · Jowar · Ragi · Barley</p>
-            <span class="tag">Protein Rich*</span><span class="tag">Everyday Flour</span>
-          </article>
-          <article class="product">
-            <div class="product-img"><img src="roots-to-eat-hero.png" alt="Premium Spices" style="object-position:88% center; transform:scale(1.45)"></div>
-            <h3>Premium Spices</h3><p>Pure · Aromatic · Authentic</p>
-            <span class="tag">Natural Flavour</span><span class="tag">No Added Colour*</span>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="founder">
+  <div class="story">
+    <div class="reveal"><span>Founder</span><h2>Ritika Kanwar</h2><p class="quote">“Har aata, har masala sirf ek product nahi — balki hamare khet, hamari mehnat aur hamari mitti ka swaad hai.”</p><p>Founder, MARUGRAINS</p></div>
+    <div class="reveal"><h2>Our Vision</h2><p>To build a Rajasthan-born food brand known for purity, quality and honest sourcing — serving Indian families and reaching international buyers.</p><p><b>Marudhar ki mitti. Global pehchaan.</b></p></div>
+  </div>
+</section>
 
-    <section class="process" id="journey">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">From Farm to Kitchen</div>
-          <h2>From roots to your table.</h2>
-          <p>A simple journey connecting traditional Indian grains with modern food experiences.</p>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step-num">01</div><h3>Farm</h3><p>Grains begin with India's farming communities.</p></div>
-          <div class="step"><div class="step-num">02</div><h3>Select</h3><p>Thoughtful sourcing and quality-focused selection.</p></div>
-          <div class="step"><div class="step-num">03</div><h3>Mill</h3><p>Modern milling with care for the grain.</p></div>
-          <div class="step"><div class="step-num">04</div><h3>Pack</h3><p>Clean, practical packaging made for kitchens.</p></div>
-          <div class="step"><div class="step-num">05</div><h3>Home</h3><p>From our roots to everyday Indian meals.</p></div>
-        </div>
-      </div>
-    </section>
+<section class="contact" id="contact">
+  <div class="reveal"><span>Let's Connect</span><h2>MARUGRAINS</h2><p>For product enquiries, wholesale, distribution or export discussions:</p><p><a href="mailto:dehrakrishna@gmail.com">dehrakrishna@gmail.com</a></p><a class="btn primary" href="mailto:dehrakrishna@gmail.com?subject=MARUGRAINS%20Business%20Enquiry">Start a Conversation</a></div>
+</section>
 
-    <section class="roots">
-      <div class="container roots-grid">
-        <div class="map">
-          <div class="india">INDIA</div>
-          <div class="pin">📍 ROOTED IN RAJASTHAN</div>
-        </div>
-        <div class="roots-copy">
-          <div class="eyebrow">Our Roots</div>
-          <h2>Rooted in Rajasthan. Ready for India.</h2>
-          <p>We are building a food brand inspired by Rajasthan's land, India's traditional grains and the everyday needs of modern families.</p>
-          <div class="quote">“The future of good food can begin with the wisdom of our roots.”</div>
-        </div>
-      </div>
-    </section>
+<div class="footer"><div>© 2026 MARUGRAINS • Rajasthan, India</div><div>Pure Grains • Real Nutrition • Rajasthan's Pride</div></div>
 
-    <section class="partner" id="partner">
-      <div class="container">
-        <div class="partner-box">
-          <div>
-            <div class="eyebrow">Business Enquiry</div>
-            <h2>Take Roots to your market.</h2>
-            <p>Retailers, distributors and bulk buyers — let's build the next chapter together.</p>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="https://wa.me/916378480553?text=Hello%20Roots%20to%20Eat%2C%20I%20am%20interested%20in%20a%20business%20partnership.">Become a Partner</a>
-            <a class="btn secondary" href="mailto:dehrakrishna@gmail.com">Email Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="brand">Roots to Eat</div>
-          <p style="margin-top:13px;max-width:300px">Naturally Good. Truly Indian.<br>Traditional grains and flavours, rooted in Rajasthan.</p>
-        </div>
-        <div><h4>Explore</h4><p><a href="#story">Our Story</a></p><p><a href="#products">Products</a></p><p><a href="#journey">Our Roots</a></p></div>
-        <div><h4>Business</h4><p><a href="#partner">Distributor Enquiry</a></p><p><a href="#partner">Retailer Enquiry</a></p><p><a href="#partner">Bulk Orders</a></p></div>
-        <div><h4>Contact</h4><p><a href="mailto:dehrakrishna@gmail.com">dehrakrishna@gmail.com</a></p><p><a href="tel:+916378480553">+91 63784 80553</a></p><p>Rajasthan, India</p></div>
-      </div>
-      <div class="copyright"><span>© 2026 Roots to Eat. All rights reserved.</span><span>*Final product claims should match approved packaging/label compliance.</span></div>
-    </div>
-  </footer>
-
-  <a class="whatsapp" href="https://wa.me/916378480553?text=Hello%20Roots%20to%20Eat%2C%20I%20want%20to%20know%20more.">💬 WhatsApp</a>
+<button class="music" id="music" title="Toggle ambient sound">♪</button>
+<audio id="bg" loop preload="none">
+  <!-- Add your own royalty-free Rajasthani instrumental MP3 as assets/rajasthani-ambient.mp3 -->
+  <source src="assets/rajasthani-ambient.mp3" type="audio/mpeg">
+</audio>
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+const bg=document.getElementById('bg'), btn=document.getElementById('music');
+btn.onclick=()=>{if(bg.paused){bg.play().catch(()=>{});btn.textContent='Ⅱ'}else{bg.pause();btn.textContent='♪'}};
+</script>
 </body>
 </html>
